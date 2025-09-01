@@ -1,0 +1,27 @@
+
+<h2>Máy tính MVC</h2>
+
+<form asp-action="Index" method="post">
+    <label>Số thứ nhất:</label>
+    <input type="number" name="soA"/>
+    <br />
+
+    <label>Số thứ hai:</label>
+    <input type="number" name="soB"/>
+    <br />
+
+    <label>Chọn phép tính:</label>
+    <select name="Operation">
+        <option value="tong">Tổng</option>
+        <option value="hieu">Hiệu</option>
+        <option value="tich">Tích</option>
+        <option value="thuong">Thương</option>
+    </select>
+    <br />
+
+    <input type="submit" value="Tính" />
+</form>
+
+
+<h3>@ViewBag.Message</h3>
+
