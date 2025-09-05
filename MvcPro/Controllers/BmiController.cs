@@ -33,7 +33,7 @@ namespace MvcPro.Controllers
             {
                 bmi.message = "Béo phì";
             }
-            ViewBag.sobmi = "Số BMI của bạn là:" + " " + bmi.kqbmi + " " + bmi.message;
+            ViewBag.sobmi = "Số BMI của bạn là:" + " " + bmi.kqbmi + " Bạn đang " + bmi.message;
             return View(bmi);
         }
     }
