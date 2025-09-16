@@ -28,7 +28,7 @@ namespace MvcPro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Create([Bind("Id,FullName,Address")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -55,9 +55,9 @@ namespace MvcPro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,FullName,Address")] Person person)
         {
-            if (id != person.PersonId)
+            if (id != person.Id)
             {
                 return NotFound();
             }
@@ -71,7 +71,7 @@ namespace MvcPro.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.PersonId))
+                    if (!PersonExists(person.Id))
                     {
                         return NotFound();
                     }
@@ -91,7 +91,7 @@ namespace MvcPro.Controllers
             {
                 return NotFound();
             }
-            var person = await _context.Person.FirstOrDefaultAsync(m => m.PersonId == id);
+            var person = await _context.Person.FirstOrDefaultAsync(m => m.Id == id);
             if (person == null)
             {
                 return NotFound();
@@ -118,7 +118,7 @@ namespace MvcPro.Controllers
 
         private bool PersonExists(string id)
         {
-            return (_context.Person?.Any(e => e.PersonId == id)).GetValueOrDefault();
+            return (_context.Person?.Any(e => e.Id == id)).GetValueOrDefault();
         }
         
     }
