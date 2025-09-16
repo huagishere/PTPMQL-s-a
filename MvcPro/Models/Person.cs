@@ -8,9 +8,9 @@ namespace MvcPro.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public string PersonId { get; set; } = string.Empty;
 
         public string FullName { get; set; } = string.Empty;
-        public DateTime BirthDay { get; set; }
+        public string Address { get; set; } = string.Empty;
     }
 }
