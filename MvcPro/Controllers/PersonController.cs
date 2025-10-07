@@ -28,7 +28,7 @@ namespace MvcPro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FullName,Address")] Person person)
+        public async Task<IActionResult> Create([Bind("Id,FullName,Address,Point")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +55,7 @@ namespace MvcPro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,FullName,Address")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,FullName,Address,Point")] Person person)
         {
             if (id != person.Id)
             {
