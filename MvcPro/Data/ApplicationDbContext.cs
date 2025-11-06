@@ -7,15 +7,15 @@ using MvcPro.Models;
 
 namespace MvcPro.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbcontext : DbContext
     {
-        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options)
+        public ApplicationDbcontext(DbContextOptions<ApplicationDbcontext> options)
             : base(options)
         {
         }
 
-        public DbSet<MvcPro.Models.HeThongPhanPhoi> HeThongPhanPhoi { get; set; } = default!;
-        public DbSet<MvcPro.Models.DaiLy> DaiLy { get; set; } = default!;
-        public DbSet<MvcPro.Models.Employee> Employee { get; set; } = default!;
+       
+        public DbSet<Person> Person { get; set; }
+        public DbSet<Employee> Employee { get; set; }
     }
 }

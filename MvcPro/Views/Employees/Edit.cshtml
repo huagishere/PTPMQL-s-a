@@ -1,4 +1,4 @@
-@model MvcPro.Models.HeThongPhanPhoi
+@model MvcPro.Models.Employee
 
 @{
     ViewData["Title"] = "Edit";
@@ -6,13 +6,18 @@
 
 <h1>Edit</h1>
 
-<h4>HeThongPhanPhoi</h4>
+<h4>Employee</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="MaHTPP" />
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="MaHTPP" class="control-label"></label>
+                <input asp-for="MaHTPP" class="form-control" />
+                <span asp-validation-for="MaHTPP" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="TenHTPP" class="control-label"></label>
                 <input asp-for="TenHTPP" class="form-control" />

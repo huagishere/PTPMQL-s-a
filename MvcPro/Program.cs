@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbcontext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("ApplicationDbContext") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContext' not found.")));
 builder.Services.AddDbContext<ApplicationDbcontext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")
